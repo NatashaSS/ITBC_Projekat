@@ -1,0 +1,28 @@
+package page.objects;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class RegistrationForm {
+
+	private static final String REGISTER="//input[@id='blue_btn']";
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static WebElement getRegisterLink(WebDriver dr) {
+		WebElement wb=dr.findElement(By.xpath(REGISTER));
+		return wb;
+	}
+	
+	public static void clickRegisterLink(WebDriver dr) {
+		getRegisterLink(dr).click();
+	}
+}

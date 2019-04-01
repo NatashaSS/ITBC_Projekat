@@ -1,0 +1,37 @@
+package page.objects;
+import org.openqa.selenium.*;
+
+public class Homepage {
+	
+
+	
+	
+		public static final String PAGE_URL="http://localhost/izlet/index.php";
+		private static final String REGISTER="//input[@id='blue_btn']";
+		private static final String LOGIN="//input[@value='Log in']";
+		
+		public static WebElement getRegisterLink(WebDriver dr) {
+			WebElement wb=dr.findElement(By.xpath(REGISTER));
+			return wb;
+		}
+		public static WebElement getLoginLink(WebDriver dr) {
+			WebElement wb=dr.findElement(By.xpath(LOGIN));
+			return wb;
+		}
+		
+		
+		public static void clickRegisterLink(WebDriver dr) {
+			getRegisterLink(dr).click();
+		}
+		
+		public static void clickLoginLink(WebDriver dr) {
+			getLoginLink(dr).click();
+		}
+		public static void openPage(WebDriver dr) {
+			dr.get(PAGE_URL);
+		}
+		public static void navigateTo(WebDriver dr) {
+			dr.navigate().to(PAGE_URL);
+		}
+	}
+

@@ -1,0 +1,8 @@
+package utility;
+
+public class Config {
+	public static final String url = "http://localhost/izlet/";
+	public static final String Path_TestData = "C:\\\\Users\\\\natas\\\\Desktop\\\\ITBC Radni\\\\ITBC_Projekat\\\\Data.xls\\";
+    public static final String File_TestData = "Data";
+
+}

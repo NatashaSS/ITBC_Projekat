@@ -1,0 +1,34 @@
+package excelltestiranje;
+import utility.*;
+public class GlavniProgram {
+
+	public static void main(String[] args) {
+		String sheetName="Book1";
+		String str="Data";
+		try {
+			ExcelUtils.setExcelFile(Constant.Path_TestData+Constant.File_TestData,sheetName);
+			System.out.println(ExcelUtils.getCellData(0, 0));
+			ExcelUtils.setCellData(str, 0, 0);
+			/*for(int i=0;i<150;i++) {
+				String usrn=ExcelUtils.getCellData(i, 0);
+				String pass=ExcelUtils.getCellData(i, 1);
+				TestLogin.tryLogin(usrn,pass,driver);
+			}
+			*/
+			//Primer kako string pretvoriti u integer
+			String nekiBrojUStringu="123";
+			//ExcelUtils.getWorkSheet().getLastRowNum();
+			//Ova linija uzima broj 123 koji je string i
+			//pretvara ga u integer
+			int broj = Integer.parseInt(nekiBrojUStringu);
+			System.out.println(broj);
+			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+	}
+
+}
