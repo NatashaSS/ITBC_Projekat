@@ -1,0 +1,5 @@
+//		Password from Excell table of users
+		RegistrationForm.clickPassword(dr);
+		data = ExcelUtils.getCellData(i, 4);
+		RegistrationForm.sendKeysPassword(dr, data);
+		

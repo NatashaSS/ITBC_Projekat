@@ -1,0 +1,10 @@
+package page.tests;
+import org.openqa.selenium.*;
+
+import page.objects.RegistrationForm;
+import utility.Config;
+import utility.ExcelUtils;
+
+public class RegistrationFormTest {
+
+}

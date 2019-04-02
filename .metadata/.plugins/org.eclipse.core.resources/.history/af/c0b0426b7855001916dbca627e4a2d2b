@@ -1,0 +1,32 @@
+package start;
+import org.openqa.selenium.chrome.ChromeDriver;
+import page.objects.Homepage;
+import page.tests.HomepageTest;
+import page.objects.RegistrationForm;
+import page.tests.RegistrationFormTest;
+import page.objects.LoginForm;
+import page.tests.LoginFormTest;
+
+import org.openqa.selenium.*;
+
+public class MainAutomation {
+	WebDriver driver = new ChromeDriver();
+	try{
+		Homepage.openPage(driver);
+
+	
+	RegistrationFormTest.testWithAllUsers(driver);
+	}catch(Exception ex) {
+		ex.printStackTrace();
+	}
+	
+	try{
+		Homepage.openPage(driver);
+
+	
+	LoginFormTest.testWithAllUsers(driver);
+	}catch(Exception ex1) {
+		ex1.printStackTrace();
+	}
+}
+}

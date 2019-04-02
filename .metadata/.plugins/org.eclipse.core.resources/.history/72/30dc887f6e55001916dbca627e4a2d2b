@@ -1,0 +1,36 @@
+package page.tests;
+import org.openqa.selenium.*;
+
+import page.objects.RegistrationForm;
+import utility.Config;
+import utility.ExcelUtils;
+
+public class RegistrationFormTest {
+
+	public static void fillRegistrationForm(WebDriver dr,int i) throws Exception {
+		String data;
+		ExcelUtils.
+		setExcelFile
+		(Config.PATH +Config.FILE,
+				Config.sheetName);
+		RegistrationPage.clickFirstName(dr);
+		data=ExcelUtils.getCellData(i, 0);
+		RegistrationPage.sendKeysFirstName(dr, data);
+		
+		RegistrationPage.clickLastName(dr);
+		data = ExcelUtils.getCellData(i, 1);
+		RegistrationPage.sendKeysLastName(dr, data);
+		// First name
+		
+		RegistrationPage.clickPhone(dr);
+		data = ExcelUtils.getCellData(i, 2);
+		RegistrationPage.sendKeysPhone(dr, data);
+		RegistrationPage.clickEmail(dr);
+		data = ExcelUtils.getCellData(i, 3);
+		RegistrationPage.sendKeysEmail(dr, data);
+		
+	
+	
+	
+	
+}
