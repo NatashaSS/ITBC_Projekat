@@ -2,11 +2,7 @@ package page.objects;
 import org.openqa.selenium.*;
 
 public class Homepage {
-	
-
-	
-	
-		public static final String PAGE_URL="http://localhost/izlet/index.php";
+			public static final String PAGE_URL="http://localhost/izlet/index.php";
 		public static final String GALLERY="//nav[@class='main-nav']//a[@class='a_bold'][contains(text(),'Galerija')]";
 		
 //		metoda koja preuzima i cuva Gallery link xpath

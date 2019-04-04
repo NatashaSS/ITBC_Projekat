@@ -1,0 +1,69 @@
+package page.tests;
+
+import java.util.Scanner;
+
+import org.openqa.selenium.*;
+
+import page.objects.Homepage;
+import page.objects.LoginForm;
+import page.objects.RegistrationForm;
+import utility.Config;
+import utility.ExcelUtils;
+
+public class LoginFormTest {
+
+	public static void fillLoginForm(WebDriver dr, int i) throws Exception {
+		String data;
+		ExcelUtils.setExcelFile(Config.PATH + Config.FILE, Config.sheetName);
+
+// 		Username from Excel table of users
+
+		LoginForm.clickUsername(dr);
+		data = ExcelUtils.getCellData(i, 2);
+		LoginForm.sendKeysUsername(dr, data);
+
+//		Password from Excel table of users
+		LoginForm.clickPassword(dr);
+		data = ExcelUtils.getCellData(i, 4);
+		LoginForm.sendKeysPassword(dr, data);
+
+//		Clicking the login button
+		LoginForm.clickLoginLink(dr);
+		
+
+		
+
+	}
+//	Testing with all available users
+	
+	public static void testWithAllUsers(WebDriver dr) throws Exception {
+		ExcelUtils.
+		setExcelFile
+		(Config.PATH+Config.FILE,
+				Config.sheetName);
+		for(int i=0;i<ExcelUtils.getWorkSheet().getLastRowNum()+1;i++) {
+			fillLoginForm(dr,i);
+			Homepage.navigateTo(dr);
+		}
+	}
+
+//		Manual testing
+		public static void manfillLogForm(WebDriver dr, int i) {
+			Scanner sc=new Scanner (System.in);
+			String data; 
+			// Username input by user
+
+			RegistrationForm.clickUsername(dr);
+			System.out.println("Enter Username");
+			data = sc.nextLine();
+			RegistrationForm.sendKeysUsername(dr, data);
+			// Password input by user
+
+			RegistrationForm.clickPassword(dr);
+			System.out.println("Enter Password");
+			data = sc.nextLine();
+			RegistrationForm.sendKeysPassword(dr, data);
+//			Clicking the login button
+			LoginForm.clickLoginLink(dr);
+}
+}

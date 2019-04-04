@@ -1,0 +1,108 @@
+package page.tests;
+
+import java.util.Scanner;
+
+import org.openqa.selenium.*;
+
+import page.objects.Homepage;
+import page.objects.LoginForm;
+import page.objects.RegistrationForm;
+import utility.Config;
+import utility.ExcelUtils;
+
+public class LoginFormTest {
+
+//	Manual testing of login functionality
+	public static void manfillLogForm(WebDriver dr) {
+		Scanner sc = new Scanner(System.in);
+		String data;
+		// Username input by user
+
+		LoginForm.clickUsername(dr);
+		System.out.println("Enter Username");
+		data = sc.nextLine();
+		LoginForm.sendKeysUsername(dr, data);
+		// Password input by user
+
+		LoginForm.clickPassword(dr);
+		System.out.println("Enter Password");
+		data = sc.nextLine();
+		LoginForm.sendKeysPassword(dr, data);
+//		Clicking the login button
+		LoginForm.clickLoginLink(dr);
+		
+//		Dashboard testing with manual input data
+//	clicking on a post button (for making a new post)
+		LoginForm.clickPost(dr);
+	
+//		Setting up Excursion site name	
+			LoginForm.clickNaziv(dr);
+			System.out.println("Enter Excursuion site name");
+			data=sc.nextLine();
+			LoginForm.sendKeysNaziv(dr, data);
+//			Setting up Excursion location	
+				LoginForm.clickLokacija(dr);
+				System.out.println("Enter Excursuion location");
+				data=sc.nextLine();
+				LoginForm.sendKeysLokacija(dr, data);
+//				Choosing transportation option
+				//Select Country
+				
+				
+				
+//				Entering Description
+				LoginForm.clickOpis(dr);
+				System.out.println("Enter Excursuion desription");
+				data=sc.nextLine();
+				LoginForm.sendKeysOpis(dr, data);
+				
+//				Clicking on post button
+				LoginForm.getPostDash(dr).click();
+				
+				
+	
+
+	}
+		
+		
+//		Clicking logout button
+		LoginForm.getLogoutLink(dr).click();
+
+//		NAPISATI LOG OUT METODU
+	
+
+	public static void fillLoginForm(WebDriver dr, int i) throws Exception {
+		String data;
+		ExcelUtils.setExcelFile(Config.PATH + Config.FILE, Config.sheetName);
+
+// 		Username from Excel table of users
+
+		LoginForm.clickUsername(dr);
+		data = ExcelUtils.getCellData(i, 2);
+		LoginForm.sendKeysUsername(dr, data);
+
+//		Password from Excel table of users
+		LoginForm.clickPassword(dr);
+		data = ExcelUtils.getCellData(i, 4);
+		LoginForm.sendKeysPassword(dr, data);
+
+//		Clicking the login button
+		LoginForm.clickLoginLink(dr);
+//		Clicking the logout button
+		LoginForm.clickLogoutLink(dr);
+	}
+
+//	Automated Testing with all available users from Excel table
+
+	public static void testWithAllUsers(WebDriver dr) throws Exception {
+		ExcelUtils.setExcelFile(Config.PATH + Config.FILE, Config.sheetName);
+		for (int i = 0; i < ExcelUtils.getWorkSheet().getLastRowNum() + 1; i++) {
+			fillLoginForm(dr, i);
+			Homepage.navigateTo(dr);
+		}
+	}
+//	dashboard manipulation metode!!!
+
+
+
+}
