@@ -50,7 +50,8 @@ public class RegistrationFormTest {
 		setExcelFile
 		(Config.PATH+Config.FILE,
 				Config.sheetName);
-		for(int i=0;i<ExcelUtils.getWorkSheet().getLastRowNum()+1;i++) {
+		
+		for(int i=1;i<ExcelUtils.getWorkSheet().getLastRowNum()+1;i++) {
 			fillRegistrationForm(dr,i);
 			Homepage.navigateTo(dr);}
 		}
@@ -71,7 +72,7 @@ public class RegistrationFormTest {
 				data = sc.nextLine();
 				RegistrationForm.sendKeysLastName(dr, data);
 		
-				// Username input by user
+			// Username input by user
 
 				RegistrationForm.clickUsername(dr);
 				System.out.println("Enter Username");

@@ -127,3 +127,185 @@ user global configuration and to define the default location to store repositori
 not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
 EGit might behave differently since they see different configuration options.
 This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.debug 2 0 2019-04-04 19:14:13.246
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
+
+!ENTRY org.eclipse.jdt.debug 2 0 2019-04-04 19:29:57.438
+!MESSAGE Unable to find location of java.lang.Thread.setName() in debuggee JVM, for type java.lang.Thread
+
+!ENTRY org.eclipse.osgi 2 0 2019-04-04 19:31:32.119
+!MESSAGE While loading class "org.eclipse.m2e.core.MavenPlugin", thread "Thread[Worker-102: JDI thread evaluations,5,main]" timed out waiting (5003ms) for thread "Thread[Worker-111: Debug Source Lookup,5,main]" to finish starting bundle "org.eclipse.m2e.core_1.10.0.20181127-2120 [244]". To avoid deadlock, thread "Thread[Worker-102: JDI thread evaluations,5,main]" is proceeding but "org.eclipse.m2e.core.MavenPlugin" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="1.10.0.20181127-2120"; osgi.identity="org.eclipse.m2e.core"; singleton:="true" [id=244] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:344)
+	at org.eclipse.osgi.container.Module.start(Module.java:408)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:471)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:557)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:331)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:39)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:414)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:153)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identifyNexusIndexer(MavenArtifactIdentifier.java:95)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identify(MavenArtifactIdentifier.java:78)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenSourceContainerResolver.resolveSourceContainers(MavenSourceContainerResolver.java:40)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.getSourceContainer(AdvancedSourceLookupParticipant.java:144)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.findSourceElements(AdvancedSourceLookupParticipant.java:72)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector$SourceLookupQuery.run(AbstractSourceLookupDirector.java:139)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.doSourceLookup(AbstractSourceLookupDirector.java:478)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.getSourceElement(AbstractSourceLookupDirector.java:720)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.doSourceLookup(JavaDebugUtils.java:399)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:393)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:360)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveJavaProject(JavaDebugUtils.java:415)
+	at org.eclipse.jdt.internal.debug.ui.JavaWatchExpressionDelegate$EvaluationRunnable.run(JavaWatchExpressionDelegate.java:117)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:3606)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:341)
+	... 28 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:341)
+	at org.eclipse.osgi.container.Module.start(Module.java:408)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:471)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:557)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:331)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.sources.SingleSourcePackage.loadClass(SingleSourcePackage.java:39)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:469)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:414)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:153)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identifyNexusIndexer(MavenArtifactIdentifier.java:95)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identify(MavenArtifactIdentifier.java:78)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenSourceContainerResolver.resolveSourceContainers(MavenSourceContainerResolver.java:40)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.getSourceContainer(AdvancedSourceLookupParticipant.java:144)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.findSourceElements(AdvancedSourceLookupParticipant.java:72)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector$SourceLookupQuery.run(AbstractSourceLookupDirector.java:139)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.doSourceLookup(AbstractSourceLookupDirector.java:478)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.getSourceElement(AbstractSourceLookupDirector.java:720)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.doSourceLookup(JavaDebugUtils.java:399)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:393)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:360)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveJavaProject(JavaDebugUtils.java:415)
+	at org.eclipse.jdt.internal.debug.ui.JavaWatchExpressionDelegate$EvaluationRunnable.run(JavaWatchExpressionDelegate.java:117)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:3606)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.osgi 2 0 2019-04-04 19:31:37.128
+!MESSAGE While loading class "org.eclipse.m2e.core.internal.index.IndexManager", thread "Thread[Worker-102: JDI thread evaluations,5,main]" timed out waiting (5001ms) for thread "Thread[Worker-111: Debug Source Lookup,5,main]" to finish starting bundle "org.eclipse.m2e.core_1.10.0.20181127-2120 [244]". To avoid deadlock, thread "Thread[Worker-102: JDI thread evaluations,5,main]" is proceeding but "org.eclipse.m2e.core.internal.index.IndexManager" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="1.10.0.20181127-2120"; osgi.identity="org.eclipse.m2e.core"; singleton:="true" [id=244] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:344)
+	at org.eclipse.osgi.container.Module.start(Module.java:408)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:471)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:557)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:331)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:473)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:414)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:153)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identifyNexusIndexer(MavenArtifactIdentifier.java:95)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identify(MavenArtifactIdentifier.java:78)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenSourceContainerResolver.resolveSourceContainers(MavenSourceContainerResolver.java:40)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.getSourceContainer(AdvancedSourceLookupParticipant.java:144)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.findSourceElements(AdvancedSourceLookupParticipant.java:72)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector$SourceLookupQuery.run(AbstractSourceLookupDirector.java:139)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.doSourceLookup(AbstractSourceLookupDirector.java:478)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.getSourceElement(AbstractSourceLookupDirector.java:720)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.doSourceLookup(JavaDebugUtils.java:399)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:393)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:360)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveJavaProject(JavaDebugUtils.java:415)
+	at org.eclipse.jdt.internal.debug.ui.JavaWatchExpressionDelegate$EvaluationRunnable.run(JavaWatchExpressionDelegate.java:117)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:3606)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:341)
+	... 27 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:341)
+	at org.eclipse.osgi.container.Module.start(Module.java:408)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:471)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:117)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:557)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:331)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:395)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:473)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:422)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:414)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:153)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identifyNexusIndexer(MavenArtifactIdentifier.java:95)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identify(MavenArtifactIdentifier.java:78)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenSourceContainerResolver.resolveSourceContainers(MavenSourceContainerResolver.java:40)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.getSourceContainer(AdvancedSourceLookupParticipant.java:144)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.findSourceElements(AdvancedSourceLookupParticipant.java:72)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector$SourceLookupQuery.run(AbstractSourceLookupDirector.java:139)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.doSourceLookup(AbstractSourceLookupDirector.java:478)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.getSourceElement(AbstractSourceLookupDirector.java:720)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.doSourceLookup(JavaDebugUtils.java:399)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:393)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:360)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveJavaProject(JavaDebugUtils.java:415)
+	at org.eclipse.jdt.internal.debug.ui.JavaWatchExpressionDelegate$EvaluationRunnable.run(JavaWatchExpressionDelegate.java:117)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:3606)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.debug.core 4 2 2019-04-04 19:31:38.082
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.debug.core".
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identifyNexusIndexer(MavenArtifactIdentifier.java:95)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identify(MavenArtifactIdentifier.java:78)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenSourceContainerResolver.resolveSourceContainers(MavenSourceContainerResolver.java:40)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.getSourceContainer(AdvancedSourceLookupParticipant.java:144)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.findSourceElements(AdvancedSourceLookupParticipant.java:72)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector$SourceLookupQuery.run(AbstractSourceLookupDirector.java:139)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.doSourceLookup(AbstractSourceLookupDirector.java:478)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.getSourceElement(AbstractSourceLookupDirector.java:720)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.doSourceLookup(JavaDebugUtils.java:399)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:393)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:360)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveJavaProject(JavaDebugUtils.java:415)
+	at org.eclipse.jdt.internal.debug.ui.JavaWatchExpressionDelegate$EvaluationRunnable.run(JavaWatchExpressionDelegate.java:117)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:3606)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.debug.core 4 125 2019-04-04 19:31:38.098
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identifyNexusIndexer(MavenArtifactIdentifier.java:95)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenArtifactIdentifier.identify(MavenArtifactIdentifier.java:78)
+	at org.eclipse.m2e.sourcelookup.internal.launch.MavenSourceContainerResolver.resolveSourceContainers(MavenSourceContainerResolver.java:40)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.getSourceContainer(AdvancedSourceLookupParticipant.java:144)
+	at org.eclipse.jdt.launching.sourcelookup.advanced.AdvancedSourceLookupParticipant.findSourceElements(AdvancedSourceLookupParticipant.java:72)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector$SourceLookupQuery.run(AbstractSourceLookupDirector.java:139)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.doSourceLookup(AbstractSourceLookupDirector.java:478)
+	at org.eclipse.debug.core.sourcelookup.AbstractSourceLookupDirector.getSourceElement(AbstractSourceLookupDirector.java:720)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.doSourceLookup(JavaDebugUtils.java:399)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:393)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveSourceElement(JavaDebugUtils.java:360)
+	at org.eclipse.jdt.internal.debug.core.JavaDebugUtils.resolveJavaProject(JavaDebugUtils.java:415)
+	at org.eclipse.jdt.internal.debug.ui.JavaWatchExpressionDelegate$EvaluationRunnable.run(JavaWatchExpressionDelegate.java:117)
+	at org.eclipse.jdt.internal.debug.core.model.JDIThread$ThreadJob.run(JDIThread.java:3606)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)

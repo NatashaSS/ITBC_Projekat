@@ -1,5 +1,10 @@
-//		Password from Excell table of users
-		RegistrationForm.clickPassword(dr);
-		data = ExcelUtils.getCellData(i, 4);
-		RegistrationForm.sendKeysPassword(dr, data);
-		
+public static WebElement getSelect(WebDriver dr) {
+		WebElement wb=dr.findElement(By.xpath(SELECT));
+		return wb;
+	}
+	public static void selectCountr(WebDriver dr,String country) {
+		Select sel= new Select(getSelect(dr));
+		sel.selectByVisibleText(country);
+	}
+	public static void navigateTo(WebDriver dr) {
+		dr.navigate().to(PAGE_URL);

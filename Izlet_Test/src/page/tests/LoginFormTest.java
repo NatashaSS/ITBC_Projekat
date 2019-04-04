@@ -30,9 +30,14 @@ public class LoginFormTest {
 		LoginForm.sendKeysPassword(dr, data);
 //		Clicking the login button
 		LoginForm.clickLoginLink(dr);
+	}
 
 //		Dashboard testing with manual input data
 //	clicking on a post button (for making a new post)
+	public static void manfillDashForm(WebDriver dr) {
+
+		Scanner sc = new Scanner(System.in);
+		String data;
 		LoginForm.clickPost(dr);
 
 //		Setting up Excursion site name	
@@ -78,30 +83,31 @@ public class LoginFormTest {
 		data = ExcelUtils.getCellData(i, 2);
 		LoginForm.sendKeysNaziv(dr, data);
 
-//					Choosing transportation option
-		// Select Transport
+//		Choosing transportation option
+//		 Select Transport
 
-//					Clicking on a post button
+		LoginForm.selectTransport(dr, data);
+		data = ExcelUtils.getCellData(i, 2);
+
+//		Clicking on a post button
 
 		LoginForm.getPostDash(dr).click();
 	}
 
-//				Automated Testing with all available users from Excel table
+//				Automated Testing with all available posts from Excel table
 
-	public static void testWithMultiplePosts(WebDriver dr) throws Exception {
+	public static void testWithMusltiplePosts(WebDriver dr) throws Exception {
 		ExcelUtils.setExcelFile(Config.PATH + Config.FILE, Config.sheetName2);
-		for (int i = 0; i < ExcelUtils.getWorkSheet().getLastRowNum() + 1; i++) {
-			fillLoginForm(dr, i);
+		for (int i = 1; i < ExcelUtils.getWorkSheet().getLastRowNum() + 1; i++) {
+			fillDashboardForm(dr, i);
 			Homepage.navigateTo(dr);
 		}
 	}
+//	Testing login with automated input of data from Excel table of users
 
 	public static void fillLoginForm(WebDriver dr, int i) throws Exception {
 		String data;
 		ExcelUtils.setExcelFile(Config.PATH + Config.FILE, Config.sheetName);
-
-//		Clicking the logout button
-		LoginForm.clickLogoutLink(dr);
 
 // 		Username from Excel table of users
 
@@ -116,19 +122,20 @@ public class LoginFormTest {
 
 //		Clicking the login button
 		LoginForm.clickLoginLink(dr);
+
 //		Clicking the logout button
 		LoginForm.clickLogoutLink(dr);
-	}
 
+	}
 //	Automated Login Testing with all available users from Excel table
 
 	public static void testWithAllUsers(WebDriver dr) throws Exception {
 		ExcelUtils.setExcelFile(Config.PATH + Config.FILE, Config.sheetName);
-		for (int i = 0; i < ExcelUtils.getWorkSheet().getLastRowNum() + 1; i++) {
+		for (int i = 1; i < ExcelUtils.getWorkSheet().getLastRowNum() + 1; i++) {
 			fillLoginForm(dr, i);
 			Homepage.navigateTo(dr);
+
 		}
 	}
-
 
 }

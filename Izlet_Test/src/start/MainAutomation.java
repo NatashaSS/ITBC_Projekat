@@ -18,43 +18,59 @@ public class MainAutomation {
 
 
 	WebDriver driver = new ChromeDriver();
-//	testing Registration functionality
-//	testing with manual input of data
+	driver.manage().window().maximize();
+//						testing Registration functionality
+//							testing with manual input of data
+//try{ Homepage.openPage(driver);
+//
+//	
+//	RegistrationFormTest.manfillRegForm(driver);
+//	}catch(Exception ex) {
+//		ex.printStackTrace();
+//	}
+// 					testing with automated input of data
+//	try{ Homepage.openPage(driver);
+//
+//	
+//	RegistrationFormTest.testWithAllUsers(driver);
+//	}catch(Exception ex) {
+//		ex.printStackTrace();
+//	}
+//	
+	
+//					Testing of login functionality
+//						testing with manual input of data
 try{ Homepage.openPage(driver);
-
-	
-	RegistrationFormTest.manfillRegForm(driver);
-	}catch(Exception ex) {
-		ex.printStackTrace();
-	}
-// testing with automated input of data
-	try{ Homepage.openPage(driver);
-
-	
-	RegistrationFormTest.testWithAllUsers(driver);
-	}catch(Exception ex) {
-		ex.printStackTrace();
-	}
-	
-	
-//	Testing of login functionality
-//	testing with manual input of data
-try{ Homepage.openPage(driver);
-
-	
 	LoginFormTest.manfillLogForm(driver);
 	}catch(Exception ex) {
 		ex.printStackTrace();
 	}
-// testing with automated input of data
+// 							Logintesting with automated input of data
+//	try{
+////		Homepage.openPage(driver);
+////
+////	LoginFormTest.testWithAllUsers(driver);
+////	}catch(Exception ex1) {
+////		ex1.printStackTrace();
+//	}
+//							 dashboard test with manual input of data
+//	try{
+//		Homepage.openPage(driver);
+//
+//	LoginFormTest.manfillDashForm(driver);
+//	}catch(Exception ex1) {
+//		ex1.printStackTrace();
+//	}
+//	//	 dashboard test with automated input of data
 	try{
 		Homepage.openPage(driver);
 
-	
-	LoginFormTest.testWithAllUsers(driver);
+	LoginFormTest.testWithMusltiplePosts(driver);
 	}catch(Exception ex1) {
 		ex1.printStackTrace();
 	}
+	
+//	log out
 // zatvori web driver
 	
 	
