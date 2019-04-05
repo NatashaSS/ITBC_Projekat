@@ -12,22 +12,21 @@ import utility.ExcelUtils;
 
 public class LoginFormTest {
 
+
 //	Manual testing of login functionality
 	public static void manfillLogForm(WebDriver dr) {
 		Scanner sc = new Scanner(System.in);
-		String data;
-		// Username input by user
+		String username;
+		String password;
+		System.out.println("Enter Username");
+		username = sc.nextLine();
+		System.out.println("Enter password");
+		password = sc.nextLine();
 
 		LoginForm.clickUsername(dr);
-		System.out.println("Enter Username");
-		data = sc.nextLine();
-		LoginForm.sendKeysUsername(dr, data);
-		// Password input by user
-
+		LoginForm.sendKeysUsername(dr, username);
 		LoginForm.clickPassword(dr);
-		System.out.println("Enter Password");
-		data = sc.nextLine();
-		LoginForm.sendKeysPassword(dr, data);
+		LoginForm.sendKeysPassword(dr, password);
 //		Clicking the login button
 		LoginForm.clickLoginLink(dr);
 	}
@@ -35,36 +34,56 @@ public class LoginFormTest {
 //		Dashboard testing with manual input data
 //	clicking on a post button (for making a new post)
 	public static void manfillDashForm(WebDriver dr) {
-
+		dr.manage().window().setPosition(new Point (-200,0));
 		Scanner sc = new Scanner(System.in);
-		String data;
-		LoginForm.clickPost(dr);
+		String sitename;
+		String location;
+		String transport;
+		String description;
 
-//		Setting up Excursion site name	
-		LoginForm.clickNaziv(dr);
 		System.out.println("Enter Excursuion site name");
-		data = sc.nextLine();
-		LoginForm.sendKeysNaziv(dr, data);
-//			Setting up Excursion location	
-		LoginForm.clickLokacija(dr);
+		sitename = sc.nextLine();
 		System.out.println("Enter Excursuion location");
-		data = sc.nextLine();
-		LoginForm.sendKeysLokacija(dr, data);
-//				Choosing transportation option
-		// Select Transport
-
-//				Entering Description
-		LoginForm.clickOpis(dr);
+		location = sc.nextLine();
+		System.out.println("Enter Excursuion transport");
+		transport = sc.nextLine();
 		System.out.println("Enter Excursuion desription");
-		data = sc.nextLine();
-		LoginForm.sendKeysOpis(dr, data);
-
-//				Clicking on post button
-		LoginForm.getPostDash(dr).click();
+		description = sc.nextLine();
+		
+		LoginForm.clickPost(dr);
+		LoginForm.clickNaziv(dr);
+		LoginForm.sendKeysNaziv(dr, sitename);
+		LoginForm.clickLokacija(dr);
+		LoginForm.sendKeysLokacija(dr,location);
+		LoginForm.selectTransport(dr, transport);
+		LoginForm.clickOpis(dr);	
+		LoginForm.sendKeysOpis(dr, description);
+		LoginForm.clickPostDash(dr);
+		
 	}
+	
+//	Testing dashboard functionality - Deleting posts
+	public static void deletePosts(WebDriver dr) throws Exception {
+		for (int i=0; i<2; i++) {
+			LoginForm.clickOption(dr);
+			LoginForm.clickDelete(dr);
+	
+		}
+	}
+//	//	Testing dashboard functionality - Editing Posts
+		public static void editPosts(WebDriver dr) throws Exception{
 
-//	deleting post?		^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^	
-
+			Scanner sc = new Scanner (System.in);
+			System.out.println("Enter description edit text");
+			String edit = sc.nextLine();
+			
+			LoginForm.clickOption(dr);
+			LoginForm.clickEdit(dr);
+			LoginForm.clickOpis(dr);
+			LoginForm.sendKeysOpis(dr, edit);
+			LoginForm.clickPostEdit(dr);
+		}
+	
 	public static void fillDashboardForm(WebDriver dr, int i) throws Exception {
 		String data;
 		ExcelUtils.setExcelFile(Config.PATH + Config.FILE, Config.sheetName2);
@@ -87,8 +106,13 @@ public class LoginFormTest {
 //		 Select Transport
 
 		LoginForm.selectTransport(dr, data);
-		data = ExcelUtils.getCellData(i, 2);
-
+		data = ExcelUtils.getCellData(i, 3);
+		
+// Writing description text 
+		 LoginForm.getOpis(dr);
+		 data= ExcelUtils.getCellData(i, 0);
+			LoginForm.sendKeysOpis(dr, data);
+		 
 //		Clicking on a post button
 
 		LoginForm.getPostDash(dr).click();

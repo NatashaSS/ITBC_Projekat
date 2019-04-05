@@ -21,31 +21,27 @@ public class MainAutomation {
 	driver.manage().window().maximize();
 //						testing Registration functionality
 //							testing with manual input of data
-//try{ Homepage.openPage(driver);
-//
-//	
+
+////
+//	try{ Homepage.openPage(driver);
 //	RegistrationFormTest.manfillRegForm(driver);
 //	}catch(Exception ex) {
 //		ex.printStackTrace();
 //	}
-// 					testing with automated input of data
+//// 					testing with automated input of data
 //	try{ Homepage.openPage(driver);
-//
-//	
 //	RegistrationFormTest.testWithAllUsers(driver);
 //	}catch(Exception ex) {
 //		ex.printStackTrace();
 //	}
-//	
-	
 //					Testing of login functionality
-//						testing with manual input of data
+////						testing with manual input of data
 try{ Homepage.openPage(driver);
 	LoginFormTest.manfillLogForm(driver);
 	}catch(Exception ex) {
 		ex.printStackTrace();
 	}
-// 							Logintesting with automated input of data
+//// 						testing with automated input of data
 //	try{
 ////		Homepage.openPage(driver);
 ////
@@ -54,21 +50,37 @@ try{ Homepage.openPage(driver);
 ////		ex1.printStackTrace();
 //	}
 //							 dashboard test with manual input of data
-//	try{
-//		Homepage.openPage(driver);
-//
-//	LoginFormTest.manfillDashForm(driver);
-//	}catch(Exception ex1) {
-//		ex1.printStackTrace();
-//	}
-//	//	 dashboard test with automated input of data
 	try{
-		Homepage.openPage(driver);
 
-	LoginFormTest.testWithMusltiplePosts(driver);
+
+	LoginFormTest.manfillDashForm(driver);
 	}catch(Exception ex1) {
 		ex1.printStackTrace();
 	}
+
+//  deleting and editing posts functionality test
+//
+//try{
+//LoginFormTest.editPosts(driver);
+//}catch(Exception ex1) {
+//	ex1.printStackTrace();
+//}
+//
+//try{
+//
+//
+//LoginFormTest.deletePosts(driver);
+//}catch(Exception ex1) {
+//	ex1.printStackTrace();
+//}
+
+//	 dashboard test with automated input of data
+//	try{
+//		
+//	LoginFormTest.testWithMusltiplePosts(driver);
+//	}catch(Exception ex1) {
+//		ex1.printStackTrace();
+//	}
 	
 //	log out
 // zatvori web driver
