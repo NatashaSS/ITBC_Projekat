@@ -20,7 +20,7 @@ public class MainAutomation {
 		driver.manage().window().maximize();
 //	testing Registration functionality
 //	testing with manual input of data
-//
+
 		try {
 			Homepage.openPage(driver);
 			RegistrationFormTest.manfillRegForm(driver);
@@ -35,7 +35,7 @@ public class MainAutomation {
 			ex.printStackTrace();
 		}
 //	Testing of login functionality
-//	testing with manual input of data (username:testtest; password:test)
+//	testing with manual input of data
 		try {
 			Homepage.openPage(driver);
 			LoginFormTest.manfillLogForm(driver);

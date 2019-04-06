@@ -1,7 +1,5 @@
 package page.tests;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.util.Scanner;
 
 import org.openqa.selenium.*;
@@ -35,8 +33,8 @@ public class LoginFormTest {
 
 //		Dashboard testing with manual input data
 //	clicking on a post button (for making a new post)
-	public static void manfillDashForm(WebDriver dr) throws Exception {
-		LoginFormTest.zoomOutRobot(dr, 2);
+	public static void manfillDashForm(WebDriver dr) {
+		dr.manage().window().setPosition(new Point (-200,0));
 		Scanner sc = new Scanner(System.in);
 		String sitename;
 		String location;
@@ -47,7 +45,7 @@ public class LoginFormTest {
 		sitename = sc.nextLine();
 		System.out.println("Enter Excursuion location");
 		location = sc.nextLine();
-		System.out.println("Enter Excursuion transport (Walk, Car, Motorbike, Bicycle or Bus)");
+		System.out.println("Enter Excursuion transport");
 		transport = sc.nextLine();
 		System.out.println("Enter Excursuion desription");
 		description = sc.nextLine();
@@ -163,14 +161,5 @@ public class LoginFormTest {
 
 		}
 	}
-	public static void zoomOutRobot(WebDriver driver, double magnifyTimes) throws Exception {
-		Robot robot = new Robot();
-		for (int i = 0; i < magnifyTimes; i++) {
-			robot.keyPress(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_MINUS);
-			robot.keyRelease(KeyEvent.VK_CONTROL);
-			robot.keyPress(KeyEvent.VK_MINUS);
-			Thread.sleep(300);
-		}
-	}
+
 }

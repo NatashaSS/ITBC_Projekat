@@ -40,7 +40,6 @@ public class RegistrationFormTest {
 		RegistrationForm.clickRegisterLink(dr);
 //     Test with all users
 	}
-
 //  test with automated data input from Excel file
 	public static void testWithAllUsers(WebDriver dr) throws Exception {
 		ExcelUtils.setExcelFile(Config.PATH + Config.FILE, Config.sheetName);
@@ -49,7 +48,6 @@ public class RegistrationFormTest {
 			Homepage.navigateTo(dr);
 		}
 	}
-
 // Test with manual data input
 	public static void manfillRegForm(WebDriver dr) {
 		Scanner sc = new Scanner(System.in);
@@ -85,6 +83,15 @@ public class RegistrationFormTest {
 		RegistrationForm.clickRegisterLink(dr);
 
 	}
-
-
+	
+	public static void zoomOutRobot(WebDriver driver, double magnifyTimes) throws Exception {
+        Robot robot = new Robot();
+        for (int i = 0; i < magnifyTimes; i++) {
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_MINUS);
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_MINUS);
+            Thread.sleep(300);
+        }
+    }
 }

@@ -1,7 +1,5 @@
 package page.tests;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
 import java.util.Scanner;
 
 import org.openqa.selenium.*;
@@ -40,7 +38,6 @@ public class RegistrationFormTest {
 		RegistrationForm.clickRegisterLink(dr);
 //     Test with all users
 	}
-
 //  test with automated data input from Excel file
 	public static void testWithAllUsers(WebDriver dr) throws Exception {
 		ExcelUtils.setExcelFile(Config.PATH + Config.FILE, Config.sheetName);
@@ -49,7 +46,6 @@ public class RegistrationFormTest {
 			Homepage.navigateTo(dr);
 		}
 	}
-
 // Test with manual data input
 	public static void manfillRegForm(WebDriver dr) {
 		Scanner sc = new Scanner(System.in);
@@ -85,6 +81,4 @@ public class RegistrationFormTest {
 		RegistrationForm.clickRegisterLink(dr);
 
 	}
-
-
 }

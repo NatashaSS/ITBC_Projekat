@@ -21,21 +21,21 @@ public class MainAutomation {
 //	testing Registration functionality
 //	testing with manual input of data
 //
-		try {
-			Homepage.openPage(driver);
-			RegistrationFormTest.manfillRegForm(driver);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+//		try {
+//			Homepage.openPage(driver);
+//			RegistrationFormTest.manfillRegForm(driver);
+//		} catch (Exception ex) {
+//			ex.printStackTrace();
+//		}
 // 	testing with automated input of data
-		try {
-			Homepage.openPage(driver);
-			RegistrationFormTest.testWithAllUsers(driver);
-		} catch (Exception ex) {
-			ex.printStackTrace();
-		}
+//		try {
+//			Homepage.openPage(driver);
+//			RegistrationFormTest.testWithAllUsers(driver);
+//		} catch (Exception ex) {
+//			ex.printStackTrace();
+//		}
 //	Testing of login functionality
-//	testing with manual input of data (username:testtest; password:test)
+//	testing with manual input of data
 		try {
 			Homepage.openPage(driver);
 			LoginFormTest.manfillLogForm(driver);
@@ -43,12 +43,12 @@ public class MainAutomation {
 			ex.printStackTrace();
 		}
 //	testing with automated input of data
-		try {
-			Homepage.openPage(driver);
-			LoginFormTest.testWithAllUsers(driver);
-		} catch (Exception ex1) {
-			ex1.printStackTrace();
-		}
+//		try {
+//			Homepage.openPage(driver);
+//			LoginFormTest.testWithAllUsers(driver);
+//		} catch (Exception ex1) {
+//			ex1.printStackTrace();
+//		}
 //	dashboard test with manual input of data
 		try {
 			LoginFormTest.manfillDashForm(driver);

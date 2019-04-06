@@ -82,7 +82,7 @@ public class RegistrationForm {
 	public static void sendKeysPassword(WebDriver dr, String str) {
 		getPassword(dr).sendKeys(str);
 	}
-
+	
 //	Register link button
 	public static WebElement getRegisterLink(WebDriver dr) {
 		WebElement wb = dr.findElement(By.xpath(REGISTER));

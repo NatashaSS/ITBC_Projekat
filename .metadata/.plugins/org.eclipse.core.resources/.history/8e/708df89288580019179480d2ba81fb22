@@ -86,5 +86,14 @@ public class RegistrationFormTest {
 
 	}
 
-
+	public static void zoomOutRobot(WebDriver driver, double magnifyTimes) throws Exception {
+		Robot robot = new Robot();
+		for (int i = 0; i < magnifyTimes; i++) {
+			robot.keyPress(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_MINUS);
+			robot.keyRelease(KeyEvent.VK_CONTROL);
+			robot.keyPress(KeyEvent.VK_MINUS);
+			Thread.sleep(300);
+		}
+	}
 }
