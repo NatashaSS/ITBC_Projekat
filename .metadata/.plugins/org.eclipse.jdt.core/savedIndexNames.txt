@@ -4,7 +4,6 @@ INDEX VERSION 1.131+C:\Users\natas\Desktop\ITBC Radni\ITBC_Projekat\.metadata\.p
 3079686767.index
 1139710273.index
 4130060771.index
-858936443.index
 3294145718.index
 3830180928.index
 3698278747.index
